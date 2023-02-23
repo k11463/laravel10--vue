@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// 因為是用vue router 這邊的router不用
+// 必須讓後面不管打什麼都可以連接到welcome頁面
+// 不然會出現404頁面
+Route::get('/{any}', function () {
     return view('welcome');
-});
+})->where("any", ".*");

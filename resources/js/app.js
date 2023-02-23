@@ -1,6 +1,7 @@
 import './bootstrap';
 import { createApp } from 'vue/dist/vue.esm-bundler.js';
 import AppComponent from './components/App.vue';
+import router from './router/index';
 
 const app = createApp({
     components: {
@@ -8,4 +9,5 @@ const app = createApp({
     }
 });
 
+app.use(router);
 app.mount('#app');
